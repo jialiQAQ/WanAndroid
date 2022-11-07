@@ -73,3 +73,8 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+#generate
+.flutter-plugins-dependencies
+.flutter-plugins
+.dart_tool
