@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:wanandroid/middleware/route.dart';
 import 'package:wanandroid/module/homepage/HomePagePage.dart';
+
+import 'generated/l10n.dart';
 
 void main() {
   runApp(const MyApp());
   configLoading();
+  Routes.init();
 }
 
 void configLoading() {
@@ -30,12 +35,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'WanAndroid',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: const HomePagePage(),
       builder: EasyLoading.init(),
+      localizationsDelegates: const [
+        S.delegate, // Add this line
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en', ''),
+        Locale('zh', ''),
+      ],
     );
   }
 }

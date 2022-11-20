@@ -5,7 +5,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:wanandroid/http/error_codes.dart';
 import 'package:wanandroid/http/exception.dart';
-import 'package:wanandroid/util/cache.dart';
+
+import '../middleware/cache.dart';
 
 class ResponseInterceptor extends Interceptor {
   @override
